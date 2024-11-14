@@ -20,7 +20,8 @@ def game():
     
     print(f"Great! You have selected the {difficulty_choice} difficulty level.\nLet's start the game!")
     random_number = random.randint(1, 100)
-    
+    attempts = 1
+
     while lives > 0:
         guess = int(input("Enter your guess: "))
         if guess > random_number:
@@ -28,7 +29,7 @@ def game():
         if guess < random_number:
             print(f"\nIncorrect!: The number is greater than {guess}\n")
         if guess == random_number:
-            print(f"Congarulations! You guessed the number in")
-    
+            print(f"Congarulations! You guessed the number in {attempts}")
+    attempts += 1
     lives -= lives
     
